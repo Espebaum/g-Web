@@ -3,61 +3,48 @@
 <head>
     <title>CSS란?</title>
     <meta charset="utf-8">    
-    <style>
-        table{ border-collapse : collapse; }  /*이중선 제거*/
-        th,td{
-            width: 100px;
-            height: 50px;
-            text-align: center;
-            border: 1px solid #000;
-            
-            vertical-align: top;	/* 위 */
-            vertical-align: bottom;   /* 아래 */
-            vertical-align: middle;   /* 가운데 */
-        }
-        a {
-            text-decoration: none;
-        }
-        #article {
-            padding-left: 20px;
-        }
-        #grid {
-            display:grid;
-            grid-template-columns: 150px 1fr;
-        }
-        h1 {
-          font-size: 45px;
-          border-bottom:1px solid gray;
-          padding: 5px;
-          margin: 0px;
-          text-align: center;
-          display:block; /*default*/
-        }
-        #grid ol {
-            /* width:100px; */
-            border-right:1px solid  gray;
-            margin:0;
-            padding-top:10px;
-            padding-left:33px;
-        }
-        body {
-            margin:0;
-        }
-        @media(max-width:800px) {
-            #grid {
-               display:block
-            }
-            #grid ol {
-                /* width:100px; */
-                border-right: none;
-            }
-            h1 {
-                font-size: 45px;
-                border-bottom: none;
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        var Body = {
+            setLinkColor: function(color) {
+            var alist = document.querySelectorAll('a');
+                var i = 0;
+                while (i < alist.length)
+                {
+                    alist[i].style.color = color;
+                    console.log(alist[i]);
+                    i += 1;
+                }
+            },
+            setBackgroundColor: function(color) {
+                document.querySelector('body').style.backgroundColor = color;
             }
         }
-    </style>
+        var Font = {
+            setFontColor: function(color) {
+                document.querySelector('body').style.color = color;
+            }
+        }
+        function    nightdayHandler(self) {
+            var target = document.querySelector('body')
+            if(self.value === 'night') {
+                Body.setBackgroundColor('black');
+                Body.setLinkColor('powderblue');
+                Font.setFontColor('white');
+                self.value = 'day';
+            } else {
+                Body.setBackgroundColor('white');
+                Body.setLinkColor('blue');
+                Font.setFontColor('black');
+                self.value = 'night';
+            }
+        }
+    </script>
     </head>
+    <input type="button" value="night" onclick="
+    nightdayHandler(this);
+    ">
     <body>
         <h1><a href="web.html">WEB</a></h1>
     <div id="grid">

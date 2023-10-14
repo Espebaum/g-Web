@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="style.css">
 <head>
     <title>HTML이란?</title>
     <!-- <meta charset="utf-8"> -->
@@ -8,15 +9,56 @@
         <li>gyopark</li>
         <li>juhyulee</li>
     </ol>
-    </head>
 
+    <script>
+        var Body = {
+            setLinkColor: function(color) {
+            var alist = document.querySelectorAll('a');
+                var i = 0;
+                while (i < alist.length)
+                {
+                    alist[i].style.color = color;
+                    console.log(alist[i]);
+                    i += 1;
+                }
+            },
+            setBackgroundColor: function(color) {
+                document.querySelector('body').style.backgroundColor = color;
+            }
+        }
+        var Font = {
+            setFontColor: function(color) {
+                document.querySelector('body').style.color = color;
+            }
+        }
+        function    nightdayHandler(self) {
+            var target = document.querySelector('body')
+            if(self.value === 'night') {
+                Body.setBackgroundColor('black');
+                Body.setLinkColor('powderblue');
+                Font.setFontColor('white');
+                self.value = 'day';
+            } else {
+                Body.setBackgroundColor('white');
+                Body.setLinkColor('blue');
+                Font.setFontColor('black');
+                self.value = 'night';
+            }
+        }
+    </script>
+    </head>
+    <input type="button" value="night" onclick="
+        nightdayHandler(this);
+    ">
     <body>
     <h1><a href="web.html">WEB</a></h1>
+    <div id="grid">
     <ol>
         <li><a href="html.html">HTML</a></li>
         <li><a href="css.html">CSS</a></li>
         <li><a href="javas.html">Javascript</a></li>
     </ol>
+    <div id="article">
     <h2>HTML이란 무엇인가</h2>
     <p><p style="margin-top:10px;"></p><a href="https://www.w3.org/TR/HTML5/" target="_blank" title="HTML5 specification">
     Hypertext Markup Language (HTML)</a> is the standard markup language for <strong>creating <u>web</u> pages</strong> and web applications.
@@ -29,7 +71,8 @@
     HTML elements are delineated by tags, written using angle brackets.<br><br>
 
     <p>이미지는 여기서 참조하세요 https://unsplash.com/</p>
-
+    </div>
+    </div>
     <p><img src="coding1.jpg" width="50%" margin></p>
 
     <style>
