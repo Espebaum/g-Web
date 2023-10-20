@@ -119,5 +119,8 @@
     "skipLibCheck": true,
     "outDir": "./build"
     // ... other compiler options
-  }
+  },
+  "scripts": {
+    "start": "\"npx tsc --watch\" \"node word.js\""
+  }  
 }
