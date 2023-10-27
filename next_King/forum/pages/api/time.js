@@ -8,10 +8,10 @@ export default async function handler(req, res) {
     let result = await db.collection('post').find().toArray()
 
     if (req.method == 'GET') {
-        res.status(200).json(result)
+        let today = new Date();
+        res.status(200).json(today)
     }
     if (req.method == 'POST') {
-        let poo = req.body
-        res.status(200).json(poo)
+        res.status(200).json('Post')
     }
 }
