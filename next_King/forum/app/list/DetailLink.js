@@ -6,7 +6,7 @@ export default function DeatilLink() {
     let router = useRouter()
 
     return (
-        <button onClick={()=>{ router.push('/') }}>버튼</button>
+        <button onClick={()=>{ router.push('/') }}>수정</button>
     )
 }
 

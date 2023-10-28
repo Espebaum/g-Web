@@ -18,8 +18,7 @@ export default async function List() {
                         <h4><Link prefetch={ false } href={ `/detail/${result[i]._id}`} >
                             { result[i].title }
                         </Link></h4>
-                        <DeatilLink/>
-                        <p> { result[i].content } </p>
+                        <p> { Date() } </p>
                     </div>
                 )
             })

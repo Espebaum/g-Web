@@ -1,6 +1,7 @@
 import { connectDB } from "@/util/database"
 import { ObjectId } from "mongodb"
 import React from 'react'
+import DeatilLink from "@/app/list/DetailLink"
 
 export default async function Detail(props) {
     const client = await connectDB
@@ -13,6 +14,7 @@ export default async function Detail(props) {
             <h4>상세 페이지</h4>
             <h4>{ result.title }</h4>
             <p>{ result.content }</p>
+            <DeatilLink/>
         </div>
     )
 }
