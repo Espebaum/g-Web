@@ -34,3 +34,16 @@ button {
   border: none;
   border-radius: 5px;
 } 
+
+.navbar {
+  background: grey;
+  padding: 20px;
+}
+.navbar a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+.logo {
+  font-weight: bold;
+} 

@@ -2,11 +2,13 @@
 
 import { useRouter } from "next/navigation"
 
-export default function DeatilLink() {
+export default function DeatilLink(props) {
     let router = useRouter()
+    // console.log(props)
+    const { result } = props
 
     return (
-        <button onClick={()=>{ router.push('/') }}>수정</button>
+        <button onClick={()=>{ router.push('/edit/' + result._id) }}>수정</button>
     )
 }
 
