@@ -1,7 +1,6 @@
 import { connectDB } from "@/util/database"
 import React from 'react'
-import Link from 'next/link'
-import DeatilLink from "./DetailLink"
+import ShowPage from "./ShowPage"
 
 export default async function List() {
 
@@ -9,20 +8,13 @@ export default async function List() {
     const db = client.db("forum")
     let result = await db.collection('post').find().toArray()
 
+    result = result.map(item=>({ ...item, _id: item._id.toString() })) // 중요
+    // 원본 result 배열은 새로운 result 배열에 덮어씌워짐 원본 배열을 가지고있어야 하면 변수 이름을
+    // result가 아니라 다른 이름으로 하면 됨
+
     return (
         <div className="list-bg"> 
-        {
-            result.map((a, i)=>{
-                return (
-                    <div className="list-item" key={i}>
-                        <h4><Link prefetch={ false } href={ `/detail/${result[i]._id}`} >
-                            { result[i].title }
-                        </Link></h4>
-                        <p> { Date() } </p>
-                    </div>
-                )
-            })
-        } 
+            <ShowPage result={ result } />
         </div>        
     )
 }

@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation"
 
 export default function DeatilLink(props) {
     let router = useRouter()
-    // console.log(props)
     const { result } = props
 
     return (

@@ -3,6 +3,8 @@ import React from 'react'
 
 export default async function handler(req, res) {
 
+		// console.log(req.query)
+
     const client = await connectDB
     const db = client.db("forum")
     let result = await db.collection('post').find().toArray()

@@ -15,7 +15,8 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
       <div className="navbar"> 
           <Link href="/" className="logo">Appleforum</Link> 
-          <Link href="/list">List</Link> 
+          <Link href="/list">List</Link>
+          <Link href="/write">글쓰기</Link>
       </div>  
         {children}
       </body>
