@@ -2,7 +2,7 @@ import { connectDB } from "@/util/database"
 import React from 'react'
 import ShowPage from "./ShowPage"
 
-export const dynamic = 'force-dynamic'
+export const revalidate = 20
 
 export default async function List() {
 

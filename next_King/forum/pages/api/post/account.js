@@ -15,6 +15,6 @@ export default async function handler(req, res) {
             return res.status(500).json('이미 존재하는 id입니다')
         }
         let result = await db.collection('accounts').insertOne(req.body)
-        return res.redirect(302, '/join')
+        res.redirect(302, '/join')
     }
 }
