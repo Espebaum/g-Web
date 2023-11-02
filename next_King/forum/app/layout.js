@@ -15,18 +15,23 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
 	let logInfo = await getServerSession(authOptions)
+	// console.log(logInfo)
 	return (
     <html lang="en">
       <body className={inter.className}>
-      <div className="navbar"> 
+      <div className="navbar">  
           <Link href="/" className="logo">Appleforum</Link> 
           <Link href="/list">List</Link>
           <Link href="/write">글쓰기</Link>
+				
 					{
 						// jsx안에서 if 문 사용 불가능, If문이 필요하면
 						// 삼항 연산자를 가져다 써야함
 						// 조건식 ? 조건식참일때실행코드 : 거짓일때실행할코드
-						(logInfo) ? (<LogoutButton/>) : (<LoginButton/>)
+						(logInfo) ? ( <>
+							<LogoutButton /> 
+							Welcome, { logInfo.user.name }
+						</>) : (<LoginButton/>)
 					}
       </div>  
         {children}
