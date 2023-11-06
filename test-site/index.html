@@ -1,5 +1,33 @@
-<script src="script.js" defer></script>
-<label for="sides">Enter number: </label>
-<input type="number" />
-<button>Generate integar squares</button>
-<p>Output: </p>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Basic while loop example</title>
+    <style>
+
+    </style>
+  </head>
+  <body>
+
+  <p></p>
+
+
+    <script>
+        const cats = ['Bill', 'Jeff', 'Pete', 'Biggles', 'Jasmin'];
+        let sentence = "My cats are called ";
+        let res = document.querySelector("p");
+        let i = 0;
+
+        while (i < cats.length) {
+            if (i === cats.length - 1)
+                sentence += `and ${cats[i]}.`;
+            else
+                sentence += `${cats[i]}, `;
+            i++;
+        }
+        res.textContent = sentence;
+    </script>
+
+  </body>
+</html>
