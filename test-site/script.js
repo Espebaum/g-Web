@@ -1,18 +1,22 @@
-const num = document.querySelector("input");
-const btn = document.querySelector("button");
-const param = document.querySelector("p");
+function DisplayMessage() {
+    const html = document.querySelector("html");
 
-btn.addEventListener("click", showOutput)
+    const panel = document.createElement("div");
+    panel.setAttribute("class", "msgBox");
+    html.appendChild(panel);
 
-function showOutput() {
-    let input = num.value;
-    num.value = "";
-    num.focus();
-    for (let i = 1; i <= input; i++) {
-        let sqRoot = Math.sqrt(i);
-        if (Math.floor(sqRoot) !== sqRoot) {
-            continue
-        }
-        param.textContent += i + " ";
-    }
+    const msg = document.createElement("p");
+    msg.textContent = "This is a message box";
+    panel.appendChild(msg);
+
+    const closeBtn = document.createElement("button");
+    closeBtn.textContent = "x";
+    panel.appendChild(closeBtn);
+
+    closeBtn.onclick = function () {
+        panel.parentNode.removeChild(panel);
+    };
 }
+
+const btn = document.querySelector("button")
+btn.onclick = DisplayMessage;

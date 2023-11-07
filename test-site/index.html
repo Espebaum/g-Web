@@ -3,31 +3,41 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Basic while loop example</title>
+
+    <title>Function start</title>
     <style>
+      .msgBox {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 200px;
+        background: #eee;
+      }
+
+      .msgBox p {
+        line-height: 1.5;
+        padding: 10px 20px;
+        color: #333;
+      }
+
+      .msgBox button {
+        background: none;
+        border: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 1.1rem;
+        color: #aaa;
+      }
 
     </style>
   </head>
   <body>
+    <button>Display message box</button>
 
-  <p></p>
-
-
-    <script>
-        const cats = ['Bill', 'Jeff', 'Pete', 'Biggles', 'Jasmin'];
-        let sentence = "My cats are called ";
-        let res = document.querySelector("p");
-        let i = 0;
-
-        while (i < cats.length) {
-            if (i === cats.length - 1)
-                sentence += `and ${cats[i]}.`;
-            else
-                sentence += `${cats[i]}, `;
-            i++;
-        }
-        res.textContent = sentence;
+    
+    <script src="./script.js">
     </script>
-
   </body>
 </html>
