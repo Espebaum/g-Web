@@ -1,4 +1,4 @@
-function DisplayMessage() {
+function DisplayMessage(msgText, msgType) {
     const html = document.querySelector("html");
 
     const panel = document.createElement("div");
@@ -6,7 +6,7 @@ function DisplayMessage() {
     html.appendChild(panel);
 
     const msg = document.createElement("p");
-    msg.textContent = "This is a message box";
+    msg.textContent = msgText;
     panel.appendChild(msg);
 
     const closeBtn = document.createElement("button");
@@ -19,4 +19,6 @@ function DisplayMessage() {
 }
 
 const btn = document.querySelector("button")
-btn.onclick = DisplayMessage;
+btn.onclick = function () {
+    DisplayMessage("Woo, this is a different message!");
+};
