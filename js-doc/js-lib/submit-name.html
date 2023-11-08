@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="stylesheet" type="text/css" href="./global.css"> -->
+        <title>My Page</title>
+    </head>
+    <body>
+        <form>
+            <div>
+                <label for="fname">First name: </label>
+                <input id="fname" type="text" />
+            </div>
+            <div>
+                <label for="lname">Last name: </label>
+                <input id="lname" type="text" />
+            </div>
+            <div>
+                <input id="submit" type="submit" />
+            </div>
+        </form>
+        <p></p>
+
+        <script>
+            const form = document.querySelector('form');
+            const fname = document.getElementById('fname');
+            const lname = document.getElementById('lname');
+            const param = document.querySelector('p');
+
+            form.onsubmit = function (e) {
+                if (fname.value === '' || lname.value == '') {
+                    e.preventDefault();
+                    param.textContent = '이름과 성을 전부 채워 주세요.';
+                } else {
+                    e.preventDefault();
+                    param.textContent = 'Your First Name : ' + fname.value + '\n\nYour Second Name : ' + lname.value;
+                }
+            };
+        </script>
+    </body>
+</html>

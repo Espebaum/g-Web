@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="stylesheet" type="text/css" href="./global.css"> -->
+        <title>My Page</title>
+    </head>
+    <body>
+        <button>Change Color 1</button>
+        <p></p>
+        <button>Change Color 2</button>
+        <script>
+            const btns = document.querySelectorAll('button');
+
+            console.log(btns);
+
+            for (let i = 0; i < btns.length; i++) {
+                btns[i].onclick = bgChange;
+            }
+
+            function random(number) {
+                return Math.floor(Math.random() * (number + 1));
+            }
+
+            function bgChange() {
+                const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+                document.body.style.backgroundColor = rndCol;
+            }
+        </script>
+    </body>
+</html>

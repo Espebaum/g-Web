@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="stylesheet" type="text/css" href="./global.css"> -->
+        <title>My Page</title>
+    </head>
+    <body>
+        <button>Change Color</button>
+        <script>
+            const btn = document.querySelector('button');
+            function random(number) {
+                return Math.floor(Math.random() * (number + 1));
+            }
+
+            btn.onclick = function CC() {
+                const rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+                console.log(rndCol);
+
+                document.body.style.backgroundColor = rndCol;
+                btn.textContent = 'Did it Work?';
+            };
+        </script>
+    </body>
+</html>

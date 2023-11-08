@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- <link rel="stylesheet" type="text/css" href="./global.css"> -->
+        <title>My Page</title>
+    </head>
+    <body>
+        <button>Change Color 1</button>
+        <script>
+            const btn = document.querySelector('button');
+
+            function random(number) {
+                return Math.floor(Math.random() * (number + 1));
+            }
+
+            btn.addEventListener('click', function (e) {
+                let rndCol = 'rgb(' + random(255) + ',' + random(255) + ',' + random(255) + ')';
+                document.body.style.backgroundColor = rndCol;
+                e.target.style.backgroundColor = rndCol;
+                // e.target 는 btn의 참조
+                console.log(e);
+            });
+        </script>
+    </body>
+</html>
