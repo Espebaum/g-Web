@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Object-oriented JavaScript inheritance</title>
+    </head>
+
+    <body>
+        <div>
+            <label for="jscode">Enter code:</label>
+            <input type="text" id="jscode" />
+            <button>Submit code</button>
+        </div>
+
+        <p></p>
+    </body>
+
+    <script>
+        const input = document.querySelector('input');
+        const btn = document.querySelector('button');
+        const para = document.querySelector('p');
+
+        btn.onclick = function () {
+            const code = input.value;
+            para.textContent = eval(code);
+        };
+
+        // class로 Person 정의
+        class Person {
+            constructor(first, last, age, gender, interests) {
+                this.name = {
+                    first,
+                    last,
+                };
+                this.age = age;
+                this.gender = gender;
+                this.interests = interests;
+            }
+
+            greeting() {
+                console.log(`Hi! I'm ${this.name.first}`);
+            }
+
+            farewell() {
+                console.log(`${this.name.first} has left the building. Bye for now!`);
+            }
+        }
+
+        // Person 클래스를 상속받은 Teacher 클래스
+        class Teacher extends Person {
+            constructor(first, last, age, gender, interests, subject, grade) {
+                super(first, last, age, gender, interests);
+                // subject and grade are specific to Teacher
+                this._subject = subject;
+                this.grade = grade;
+            }
+
+            get subject() {
+                // getter
+                return this._subject;
+            }
+
+            set subject(newSubject) {
+                // setter
+                this._subject = newSubject;
+            }
+        }
+
+        let han = new Person('Han', 'Solo', 25, 'male', ['Smuggling']);
+        han.greeting();
+
+        let leia = new Person('Leia', 'Organa', 19, 'female'['Government']);
+        leia.farewell();
+
+        let snape = new Teacher('Severus', 'Snape', 58, 'male', ['Potions'], 'Dark arts', 5);
+        snape.greeting(); // Hi! I'm Severus.
+        snape.farewell(); // Severus has left the building. Bye for now.
+        snape.age; // 58
+        snape.subject; // Dark arts
+        console.log(snape._subject); // call getter
+        // snape._subject = "balloon pups" // setter
+        // console.log(snape._subject); // balloon pups
+    </script>
+</html>

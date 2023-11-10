@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Object-oriented JavaScript inheritance</title>
+    </head>
+
+    <body>
+        <div>
+            <label for="jscode">Enter code:</label>
+            <input type="text" id="jscode" />
+            <button>Submit code</button>
+        </div>
+
+        <p></p>
+    </body>
+
+    <script>
+        const input = document.querySelector('input');
+        const btn = document.querySelector('button');
+        const para = document.querySelector('p');
+
+        btn.onclick = function () {
+            const code = input.value;
+            para.textContent = eval(code);
+        };
+
+        function Person(first, last, age, gender, interests) {
+            this.name = {
+                first,
+                last,
+            };
+            this.age = age;
+            this.gender = gender;
+            this.interests = interests;
+        }
+
+        Person.prototype.bio = function () {
+            alert('너무 긴 함수는 사양이야.');
+        };
+
+        Person.prototype.greeting = function () {
+            alert('안녕! 나는 ' + this.name.first + '.');
+        };
+
+        Person.prototype.farewell = function () {
+            alert(this.name.first + '가 방에서 나갔다. 나중에 봐!');
+        };
+
+        // make class Teacher which inherited Person
+        function Teacher(first, last, age, gender, interests, subject) {
+            Person.call(this, first, last, age, gender, interests);
+            this.subject = subject;
+        }
+
+        // 아래 create 과정이 없으면, Teacher는 Person의 프로토타입을 상속받지 못한다.
+        // 생성자를 호출한 이후, prototype을 상속받는 과정이 필요하다.
+        // 먼저 Person의 프로토타입으로 Teacher의 프로토타입을 만들어준다.
+        Teacher.prototype = Object.create(Person.prototype);
+        // 이후, Teacher의 프로토타입 생성자를 Teacher로 바꾼다(Person으로 되어있다.)
+        Teacher.prototype.constructor = Teacher;
+
+        Teacher.prototype.greeting = function () {
+            alert('얘들아 반갑다 나는 ' + this.name.last + '고 ' + this.subject + '를 가르칠거다. 잘 부탁한다.');
+        };
+
+        Teacher.prototype.farewell = function () {
+            alert(this.name.first + ' 선생님이 방에서 나가셨다. 나중에 봐요!');
+        }; // redefinition, Hide .farewell in Person
+
+        // construct instances
+        let person1 = new Person('Tammi', 'Smith', 17, 'female', ['music', 'skiing', 'kickboxing']);
+
+        let teacher1 = new Teacher('Dave', 'Griffiths', 31, 'male', ['football', 'cookery'], 'mathematics');
+    </script>
+</html>
