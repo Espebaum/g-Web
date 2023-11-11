@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="global.css">
+</head>
+<body>
+
+    <h1>Login</h1>
+
+    <form id="loginForm">
+
+        <p><label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br></p>
+
+        <p><label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br></p>
+        
+        <input type="button" value="Login" onclick="validateLogin()">
+    
+    </form>
+
+    <script>
+        // 간단한 사용자 정보 객체
+        const userData = {
+            username: 'admin',
+            password: 'admin123'
+        };
+
+        // 로그인 유효성 검사 함수
+        function validateLogin() {
+            const usernameInput = document.getElementById('username');
+            const passwordInput = document.getElementById('password');
+
+            const username = usernameInput.value;
+            const password = passwordInput.value;
+
+            if (username === userData.username && password === userData.password) {
+                alert('로그인 성공!');
+                // 로그인 성공 후에 원하는 동작을 추가할 수 있습니다.
+            } else {
+                alert('로그인 실패. 아이디 또는 비밀번호가 잘못되었습니다.');
+            }
+        }
+    </script>
+
+</body>
+</html>

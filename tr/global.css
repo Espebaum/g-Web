@@ -1,0 +1,25 @@
+body {
+    background-image: url('./mapletree.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1, form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px; /* 로그인 박스 아래에 20px 간격 추가 */
+}
+
+/* ID와 PW 입력란 간격 조절 */
+form label
+
+form input {
+    margin-bottom: 10px; /* 각 레이블과 입력란 사이에 10px 간격 추가 */
+}
