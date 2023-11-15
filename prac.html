@@ -1,6 +1,27 @@
-<ul>
-    123
-    123
-    123
-</ul>
-<ul>124</ul>
+<h1>My Item</h1>
+<div id="app"></div>
+<script>
+    const $app = document.querySelector('#app');
+    let state = {
+        items: ['1', '2', '3', '4'],
+    };
+
+    const render = () => {
+        const { items } = state;
+        $app.innerHTML = `
+        <ul>
+            ${items.map((item) => `<li>${item}</li>`).join('')}
+            </ul>
+            <button id="append">추가</button>
+            `;
+        document.querySelector('#append').addEventListener('click', () => {
+            setState({ items: [...items, `item${items.length + 1}`] });
+        });
+    };
+
+    const setState = (newState) => {
+        state = { ...state, ...newState };
+        render();
+    };
+    render();
+</script>
