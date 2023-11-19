@@ -1,15 +1,13 @@
-const h1 = document.querySelector(".hello h1")
+const loginInput = document.querySelector('#login-form input');
+const loginBtn = document.querySelector('#login-form button');
 
-h1.addEventListener("click", () => {
-    h1.classList.toggle("active");
-}) // active가 h1의 classList에 존재한다면 제거하고, 그렇지 않다면 추가한다.
-
-h1.addEventListener("mouseenter", () => {
-    h1.textContent = "Mouse is here!"
-})
-
-h1.addEventListener("mouseleave", () => {
-    h1.textContent = "Oh my God!"
-})
-
-// console.log(h1);
+loginBtn.addEventListener('click', () => {
+    const inputName = loginInput.value;
+    if (inputName === '') {
+        alert('Write Something');
+    } else if (toString(inputName).length > 15) {
+        alert('Too Long Name');
+    } else {
+        console.log('hello!', inputName);
+    }
+});
