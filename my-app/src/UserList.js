@@ -5,11 +5,9 @@ import React, { useEffect } from 'react';
 
 function User({ user, onRemove, onToggle }) {
     useEffect(() => {
-        console.log('나타남');
-        console.log(user);
+        console.log('컴포넌트가 화면에 나타남');
         return () => {
             console.log('사라짐');
-            console.log(user);
         };
     }, [user]);
 
