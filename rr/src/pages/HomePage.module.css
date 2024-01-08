@@ -1,0 +1,86 @@
+.mainContainer {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+}
+
+.fCommand {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-width: 300px;
+}
+
+.Friendlist {
+    display: flex;
+    flex-direction: column;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    min-width: 350px;
+    border-radius: 8px;
+}
+
+.myFriend {
+    background: Yellow;
+    text-align: center;
+    margin: 10px;
+    padding: 20px;
+    width: 100px;
+}
+
+.addFriend {
+    background-color: #4caf50;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.addFriend:hover {
+    background-color: #c4fdc6;
+}
+
+.Friendlist button {
+    padding: 8px 15px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.friendInfo {
+    color: blue;
+}
+
+.ui {
+    margin: 100px 300px;
+    display:flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.match {
+    font-family: 'Fira Code';
+    width: 400px;
+    margin: 50px;
+    font-size: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* padding: 20px; */
+    /* border-radius: 8px; */
+    /* overflow: auto; */
+}
+
+.match:hover {
+    background-color: #72ffff;
+}

@@ -1,17 +1,17 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Layout from '../layout/layout';
 import Headers from '../layout/header';
+import HomePage from './HomePage';
 
 function GamePage() {
-    useEffect(() => {
-        console.log(window.name);
-    });
     return (
-        <div>
-            <Layout />
-            <Headers />
+        <>
+            <Layout>
+                <Headers />
+                <HomePage />
+            </Layout>
             <div>Game</div>
-        </div>
+        </>
     );
 }
 

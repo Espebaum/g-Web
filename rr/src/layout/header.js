@@ -4,9 +4,11 @@ import './header.css';
 
 const Headers = () => {
     return (
-        <div>
-            <h2>My Header</h2>
-        </div>
+            <div className="btnContainer">
+                <button className="myInfo">내 정보</button>
+                <button className="myRank">Rank</button>
+            </div>
+        
     );
 };
 

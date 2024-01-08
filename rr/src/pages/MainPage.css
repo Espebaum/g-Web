@@ -1,16 +1,14 @@
 body {
     margin: 0;
     font-family: 'Fira Code';
-    background: linear-gradient(145deg, #a9a9a9, #8f8f8f);
     color: #333;
 }
 
 .main-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     padding: 20px;
 }
 

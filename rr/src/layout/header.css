@@ -1,0 +1,24 @@
+.btnContainer {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.myInfo,
+.myFriend {
+    min-width: 100px; /* 버튼의 너비를 부모 요소의 너비와 동일하게 설정합니다. */
+    box-sizing: border-box; /* padding과 border를 너비에 포함합니다. */
+    margin: 10px 20px; /* 좌우 마진은 0으로, 상하 마진은 30px로 설정합니다. */
+    font-size: 20px;
+    padding: 5px 10px; /* 내부 여백 */
+}
+
+.myRank {
+    position: relative;
+    margin: 10px 20px;
+    padding: 10px;
+    font-size: 20px;
+}

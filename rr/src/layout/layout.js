@@ -2,11 +2,18 @@ import React from 'react';
 
 import './layout.css';
 
-const Layout = () => {
+const Layout = (props) => {
     return (
-        <div>
-            <h1>My layout</h1>
-        </div>
+        <>
+            <header className="layout">
+                <a className="goHome" href="/">
+                    Home
+                </a>
+                <button className="logoutBtn">Log Out</button>
+            </header>
+            {props.children}
+            <footer></footer>
+        </>
     );
 };
 
