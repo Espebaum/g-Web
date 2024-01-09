@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html>
     <head>
+        <title>Parcel Sandbox</title>
         <meta charset="UTF-8" />
-        <title>Simple Component 3</title>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <h1>Example #3</h1>
-        <div id="app"></div>
-        <script src="./src/app.js" type="module"></script>
+        <h1>Hello World!</h1>
+        <p>My Comments</p>
+        <button id="open">버튼 열기</button>
+        <div class="modal-wrapper" style="display: none">
+            <div class="modal">
+                <div class="modal-title">안녕하세요</div>
+                <p>지금부터 모달에 대해 알려드리겠습니다</p>
+                <div class="close-wrapper"></div>
+                <button id="close">닫기</button>
+            </div>
+        </div>
+        <script src="./main.js"></script>
     </body>
 </html>

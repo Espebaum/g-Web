@@ -1,0 +1,33 @@
+body {
+    font-family: 'Fira Code';
+    background-color: gray;
+}
+
+.modal-wrapper {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    min-width: 300px;
+    transform: translate(-50%, -50%); /* 정 중앙에 위치시키기 위해 자신의 크기의 절반만큼 이동 */
+}
+
+.modal {
+    background: white;
+    padding: 24px 16px;
+    border-radius: 4px;
+    width: 320px;
+}
+
+.modal-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.modal p {
+    font-size: 16px;
+}
+
+.close-wrapper {
+    text-align: right;
+}
